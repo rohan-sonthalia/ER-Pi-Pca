@@ -33,7 +33,7 @@ while notFound:
     for i in range(lastControllerCount):
         ds4 = pygame.joystick.Joystick(i)
         ds4.init()
-        if not(ds4.get_name() == controller_name):
+        if not(ds4.get_name() != controller_name):
             print("Controller %d: " % (i+1), ds4.get_name())
         else:
             notFound = False
