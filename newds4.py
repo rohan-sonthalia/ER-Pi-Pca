@@ -58,6 +58,9 @@ class PS4Controller(object):
     def dpad_right(self):
         print("D Pad Right")
 
+    def lstick_move(self, x, y):
+        print("Left Stick Moved", x, y)
+
     def init(self):
         pygame.init()
         pygame.joystick.init()
@@ -142,6 +145,7 @@ class PS4Controller(object):
                         print("L Up")
                     if self.axis_data[1] == 1:
                         print("L Down")
+                    self.lstick_move(self.axis_data[0], self.axis_data[1])
                     if self.axis_data[2] == -1:
                         print("R Left")
                     if self.axis_data[2] == 1:
